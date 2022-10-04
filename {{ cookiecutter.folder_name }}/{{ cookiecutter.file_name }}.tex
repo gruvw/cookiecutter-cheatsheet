@@ -1,0 +1,85 @@
+\documentclass[10pt, landscape, a4paper]{article}
+
+% Fonts
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[t1]{sourcesanspro}
+\RequirePackage{silence}
+\WarningFilter{latexfont}{Some font shapes were not available, defaults substituted.}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,positioning,arrows,fit,calc,graphs,graphs.standard}
+
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{microtype}
+\usepackage{pdfpages}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+% LANGUAGE
+\usepackage[english,french]{babel}
+    \selectlanguage{french}
+    \frenchsetup{StandardItemLabels=true}
+\usepackage{enumitem}  % Enumerate improved
+
+% MATH / Others
+\usepackage{amsmath, amssymb}  % Math symbols
+\usepackage{physics}  % \norm and \abs
+\usepackage{esvect, cancel}  % Misc., vectors, strikethrough
+\usepackage{mhchem}  % Chemistry
+\usepackage{siunitx}  % Units SI
+\usepackage{minted}  % Code fences ([cache=false])
+\setminted[python]{
+    fontsize=\scriptsize,
+    tabsize=4,
+    rulecolor=black,
+    xleftmargin=3mm,
+    numbersep=1mm,
+    linenos,
+    breaklines,
+}
+\usemintedstyle{pastie}
+
+% GEOMETRY
+\usepackage[
+    paper=a4paper,
+    top=15mm,
+    left=4mm,
+    bottom=-4mm,
+    right=4mm,
+]{geometry}
+\usepackage{parskip}  % Reformat paragraphs, no indent first line
+\usepackage{enumitem}  % Enumerate improved
+\usepackage{scrextend}  % Indent text with addmargin environment
+\usepackage{graphicx}  % Include graphics
+\graphicspath{{ "{{latex-img/}}" }}
+\usepackage{caption}  % Caption without figures
+
+% HYPERLINKS
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linktoc=all,
+    linkcolor=black,
+}
+
+% HEADERS
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\footnotesize {{ cookiecutter.title }}}
+\chead{\footnotesize Cheat Sheet \thepage/\pageref{LastPage}}
+\rhead{\footnotesize {{ cookiecutter.author }}}
+
+\begin{document}
+
+\input{parts/lib.tex}
+
+\begin{multicols*}{5}
+    \input{parts/main.tex}
+\end{multicols*}
+
+\end{document}

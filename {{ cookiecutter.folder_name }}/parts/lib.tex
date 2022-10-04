@@ -1,0 +1,53 @@
+\setlength{\headsep}{1mm}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\definecolor{myblue}{HTML}{1e40af}
+\definecolor{myred}{HTML}{ff0000}
+\definecolor{myorgange}{HTML}{f97316}
+\definecolor{mygreen}{HTML}{28B463}
+
+\newcommand{\blue}{\color{myblue}}
+\newcommand{\red}{\color{myred}}
+\newcommand{\orange}{\color{myorange}}
+\newcommand{\green}{\color{mygreen}}
+\newcommand{\black}{\color{black}}
+
+% \everymath{\blue}
+
+% \renewcommand{\(}{\relax\ifmmode\@badmath\else\color{myblue}$\fi}
+% \renewcommand{\)}{\relax\ifmmode\ifinner$\color{black}\else\@badmath\fi\else \@badmath\fi}
+
+% \AtBeginEnvironment{equation}{\color{myblue}}
+% \AtBeginEnvironment{equation*}{\color{myblue}}
+% \AddToHook{cmd/(/after}{\color{myblue}}
+
+\makeatletter
+\def\verbatim@nolig@list{}
+
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+    {.2ex}%
+    {.2ex}%x
+    {\blue\sffamily\small\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{1}{0mm}%
+    {.2ex}%
+    {.2ex}%x
+    {\sffamily\bfseries}}
+\makeatother
+
+% \def\mintedSpace{3mm}
+\newcommand{\mintedSpace}{3mm}
+\BeforeBeginEnvironment{minted}{
+    \vspace{-2mm}
+    \setmonofont{Fira Code}[
+        Contextuals=Alternate
+    ]
+}
+\AfterEndEnvironment{minted}{\vspace{-\mintedSpace}}
+
+\renewcommand{\theFancyVerbLine}{\scriptsize \oldstylenums{\arabic{FancyVerbLine}}}
+
+% \tiny
+% \scriptsize
+\footnotesize
+% \small

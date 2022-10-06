@@ -12,6 +12,15 @@
 \newcommand{\orange}{\color{myorange}}
 \newcommand{\green}{\color{mygreen}}
 \newcommand{\black}{\color{black}}
+\renewcommand{\gray}{\color{gray}}
+
+\newcommand{\indentSpace}{3mm}
+\setlength\parindent{\indentSpace}
+\newenvironment{myverse}
+ {\setlength{\leftmargini}{0em}
+  \setlength{\vindent}{\parindent}
+  \begin{verse}}
+ {\end{verse}}
 
 % \everymath{\blue}
 
@@ -25,11 +34,11 @@
 \makeatletter
 \def\verbatim@nolig@list{}
 
-\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+\renewcommand{\section}{\@startsection{section}{1}{-\indentSpace}%
     {.2ex}%
     {.2ex}%x
     {\blue\sffamily\small\bfseries}}
-\renewcommand{\subsection}{\@startsection{subsection}{1}{0mm}%
+\renewcommand{\subsection}{\@startsection{subsection}{1}{-\indentSpace}%
     {.2ex}%
     {.2ex}%x
     {\sffamily\bfseries}}

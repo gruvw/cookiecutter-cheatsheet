@@ -52,12 +52,13 @@
     bottom=-4mm,
     right=4mm,
 ]{geometry}
-\usepackage{parskip}  % Reformat paragraphs, no indent first line
+\usepackage[indent]{parskip}  % Reformat paragraphs
 \usepackage{enumitem}  % Enumerate improved
 \usepackage{scrextend}  % Indent text with addmargin environment
 \usepackage{graphicx}  % Include graphics
 \graphicspath{{ "{{latex-img/}}" }}
 \usepackage{caption}  % Caption without figures
+\usepackage{verse}
 
 % HYPERLINKS
 \usepackage{hyperref}
@@ -78,8 +79,10 @@
 
 \input{parts/lib.tex}
 
-\begin{multicols*}{5}
-    \input{parts/{{ cookiecutter.part_name }}.tex}
-\end{multicols*}
+\begin{myverse}
+    \begin{multicols*}{5}
+        \input{parts/{{ cookiecutter.part_name }}.tex}
+    \end{multicols*}
+\end{myverse}
 
 \end{document}

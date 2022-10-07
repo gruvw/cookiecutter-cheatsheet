@@ -2,6 +2,12 @@
 
 \renewcommand{\familydefault}{\sfdefault}
 
+% math inline style in align
+\renewenvironment{align}
+ {\let\displaystyle\textstyle\aligned}
+ {\endaligned}
+
+% Colors
 \definecolor{myblue}{HTML}{1e40af}
 \definecolor{myred}{HTML}{ff0000}
 \definecolor{myorgange}{HTML}{f97316}
@@ -14,6 +20,7 @@
 \newcommand{\black}{\color{black}}
 \renewcommand{\gray}{\color{gray}}
 
+% wrapped line indentation
 \newcommand{\indentSpace}{3mm}
 \setlength\parindent{\indentSpace}
 \newenvironment{myverse}
@@ -21,6 +28,7 @@
   \setlength{\vindent}{\parindent}
   \begin{verse}}
  {\end{verse}}
+\renewcommand{\indent}{\hspace{\indentSpace}}
 
 % \everymath{\blue}
 
@@ -32,7 +40,10 @@
 % \AddToHook{cmd/(/after}{\color{myblue}}
 
 \makeatletter
-\def\verbatim@nolig@list{}
+% \def\verbatim@nolig@list{}
+
+% Space between section number and title
+\renewcommand*{\@seccntformat}[1]{\csname the#1\endcsname\hspace{2mm}}
 
 \renewcommand{\section}{\@startsection{section}{1}{-\indentSpace}%
     {.2ex}%

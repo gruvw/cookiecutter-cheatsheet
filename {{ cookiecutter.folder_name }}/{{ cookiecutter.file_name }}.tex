@@ -59,6 +59,8 @@
 \graphicspath{{ "{{latex-img/}}" }}
 \usepackage{caption}  % Caption without figures
 \usepackage{verse}
+\usepackage[none]{hyphenat}
+\usepackage[document]{ragged2e}
 
 % HYPERLINKS
 \usepackage{hyperref}
@@ -80,8 +82,11 @@
 \input{parts/lib.tex}
 
 \begin{myverse}
+    \setlength\parskip{2mm}
     \begin{multicols*}{5}
+
         \input{parts/{{ cookiecutter.part_name }}.tex}
+        
     \end{multicols*}
 \end{myverse}
 

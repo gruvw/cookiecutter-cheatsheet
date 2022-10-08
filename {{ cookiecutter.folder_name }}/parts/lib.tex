@@ -13,12 +13,12 @@
 \definecolor{myorgange}{HTML}{f97316}
 \definecolor{mygreen}{HTML}{28B463}
 
-\newcommand{\blue}[1]{{\color{myblue} #1}}
-\newcommand{\red}[1]{{\color{myred} #1}}
-\newcommand{\orange}[1]{{\color{myorange} #1}}
-\newcommand{\green}[1]{{\color{mygreen} #1}}
-\newcommand{\black}[1]{{\color{black} #1}}
-\renewcommand{\gray}[1]{{\color{gray} #1}}
+\newcommand{\blue}[1]{{ "{{\color{myblue} #1}}" }}
+\newcommand{\red}[1]{{ "{{\color{myred} #1}}" }}
+\newcommand{\orange}[1]{{ "{{\color{myorange} #1}}" }}
+\newcommand{\green}[1]{{ "{{\color{mygreen} #1}}" }}
+\newcommand{\black}[1]{{ "{{\color{black} #1}}" }}
+\renewcommand{\gray}[1]{{ "{{\color{gray} #1}}" }}
 
 % wrapped line indentation
 \newcommand{\indentSpace}{3mm}
@@ -48,7 +48,7 @@
 \renewcommand{\section}{\@startsection{section}{1}{-\indentSpace}%
     {.2ex}%
     {.2ex}%x
-    {\blue\sffamily\small\bfseries}}
+    {\color{myblue}\sffamily\small\bfseries}}
 \renewcommand{\subsection}{\@startsection{subsection}{1}{-\indentSpace}%
     {.2ex}%
     {.2ex}%x

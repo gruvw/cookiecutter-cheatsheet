@@ -53,17 +53,22 @@
     {.2ex}%
     {.2ex}%x
     {\sffamily\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{1}{-\indentSpace}%
+    {.2ex}%
+    {.2ex}%x
+    {\sffamily\bfseries}}
+
 \makeatother
 
 % \def\mintedSpace{3mm}
-\newcommand{\mintedSpace}{3mm}
+\newcommand{\mintedSpace}{2mm}
 \BeforeBeginEnvironment{minted}{
-    \vspace{-2mm}
+    \vspace{-4.5mm}
     \setmonofont{Fira Code}[
         Contextuals=Alternate
     ]
 }
-\AfterEndEnvironment{minted}{\vspace{-\mintedSpace}}
+\AfterEndEnvironment{minted}{\vspace{-4.5mm}}
 
 \renewcommand{\theFancyVerbLine}{\scriptsize \oldstylenums{\arabic{FancyVerbLine}}}
 
